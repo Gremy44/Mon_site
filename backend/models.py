@@ -27,3 +27,10 @@ class FakeUser(models.Model):
     
     def __str__(self):
         return self.username
+    
+class GoodReasons(models.Model):
+    title = models.CharField(max_length=64)
+    reason = models.TextField()
+    
+    def __str__(self):
+        return self.title
