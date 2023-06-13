@@ -56,8 +56,9 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.AllowAny'
-    ]
+    ],
 }
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
 CORS_ORIGIN_ALLOW_ALL = True
 

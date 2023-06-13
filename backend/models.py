@@ -7,9 +7,9 @@ import json
 
 class FakeUser(models.Model):
     username = models.CharField(max_length=128)
-    password = models.CharField(max_length=128)
-    fake_username = models.CharField(max_length=128)
-    age = models.IntegerField()
+    password = models.CharField(max_length=128, blank=True)
+    fake_username = models.CharField(max_length=128, blank=True)
+    age = models.IntegerField(blank=True)
 
     def save(self, *args, **kwargs):
         # Crypte le mot de passe avant de sauvegarder l'utilisateur
@@ -34,3 +34,12 @@ class GoodReasons(models.Model):
     
     def __str__(self):
         return self.title
+    
+class Contact(models.Model):
+    
+    name = models.CharField(max_length=128)
+    email = models.EmailField(max_length=128)
+    message = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.email
