@@ -10,14 +10,14 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/contact/', {
+      const response = await axios.post('http://127.0.0.1:8000/api/contact/', {
         name,
         email,
         message
       });
 
       // Traitez ici la réponse de la requête si nécessaire
-
+      console.log('request post contact form : ', response);
       // Réinitialisez les champs après l'envoi du formulaire
       setName('');
       setEmail('');

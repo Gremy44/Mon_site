@@ -1,13 +1,25 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
-import axios from "axios";
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import axios from 'axios';
 
 interface FormData {
   username: string;
 }
 
-const MyForm: React.FC = () => {
+interface User {
+  id: number;
+  username: string;
+  password: string;
+  fake_username: string;
+  age: number;
+}
+
+interface MyFormProps {
+  onPostSuccess: (newUser: User) => void;
+}
+
+const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
   const [formData, setFormData] = useState<FormData>({
-    username: "",
+    username: '',
   });
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -19,17 +31,15 @@ const MyForm: React.FC = () => {
     event.preventDefault();
 
     axios
-      .post("http://127.0.0.1:8000/api/fake-users/", formData)
+      .post<User>('http://127.0.0.1:8000/api/fake-users/', formData)
       .then((response) => {
-        console.log("Requête POST réussie :", response.data);
-        // Réinitialiser le formulaire si nécessaire
-        setFormData({ username: ""});
+        console.log('Requête POST réussie :', response.data);
+        setFormData({ username: '' });
+        onPostSuccess(response.data);
       })
       .catch((error) => {
-        console.error("Erreur lors de la requête POST :", error);
+        console.error('Erreur lors de la requête POST :', error);
       });
-
-    console.log(formData);
   };
 
   return (

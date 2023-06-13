@@ -8,11 +8,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.contrib.sessions.models import Session
 from django.utils import timezone
+from django.core.mail import send_mail
+
+import os
+from dotenv import load_dotenv
 
 from datetime import timedelta
 
@@ -60,8 +63,23 @@ class FakeUserView(ModelViewSet):
         return super().create(request, *args, **kwargs)
 
     
-class ContactView(CreateAPIView):
+class ContactView(ModelViewSet):
     
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
     permission_classes = [AllowAny]
+    
+    def create(self, request, *args, **kwargs):
+        # Récupérer les données du formulaire de l'utilisateur
+        dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+        load_dotenv(dotenv_path)
+        
+        name = request.data.get('name')
+        email = request.data.get('email')
+        message = request.data.get('message')
+        subject = "Mail From Ton site de" + " " + name
+
+        # Envoyer l'e-mail
+        send_mail(subject, message, email, [os.getenv('EMAIL_HOST_USER')])
+        
+        return super().create(request, *args, **kwargs)

@@ -21,10 +21,10 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'fake-users', FakeUserView, basename='fake-user')
+router.register(r'contact', ContactView, basename='contact')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('reason/<pk>/', ReasonView.as_view(), name='reasons'),
-    path('contact/', ContactView.as_view(), name='contact'),
     path('api/', include(router.urls)),
     ]
