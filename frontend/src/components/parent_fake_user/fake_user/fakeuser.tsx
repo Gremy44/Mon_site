@@ -22,6 +22,9 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
     username: '',
   });
 
+  const [isButtonPressed, setIsButtonPressed] = useState(false);
+  const [submittedUsername, setSubmittedUsername] = useState<string | null>(null);
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -30,8 +33,19 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
+    setIsButtonPressed(true);
+    setSubmittedUsername(formData.username);
+
+    const newUser: User = {
+      id: 0, // Remplacez la valeur appropriée pour id
+      username: formData.username,
+      password: '', // Remplacez la valeur appropriée pour password
+      fake_username: '', // Remplacez la valeur appropriée pour fake_username
+      age: 0, // Remplacez la valeur appropriée pour age
+    };
+
     axios
-      .post<User>('http://127.0.0.1:8000/api/fake-users/', formData)
+      .post<User>('http://127.0.0.1:8000/api/fake-users/', newUser)
       .then((response) => {
         console.log('Requête POST réussie :', response.data);
         setFormData({ username: '' });
@@ -43,19 +57,26 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={formData.username}
-          onChange={handleInputChange}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      {!isButtonPressed && (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
+              onChange={handleInputChange}
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      )}
+      {isButtonPressed && submittedUsername && (
+        <p>Bienvenu {submittedUsername}</p>
+      )}
+    </div>
   );
 };
 

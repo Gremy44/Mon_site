@@ -8,7 +8,9 @@ import AVersionning from "./components/arguments_content/aversionning";
 import ADeploiement from "./components/arguments_content/adeploiement";
 import ContactForm from "./components/contactform/contactform";
 import ParentComponent from "./components/parent_fake_user/parent_fake_user";
+import GiveReason from "./components/reasons/reasons";
 
+import './style/style.css'
 
 function App() {
 
@@ -23,6 +25,7 @@ function App() {
         <AApiRest />
         <AVersionning />
         <ADeploiement />
+        <GiveReason />
         <ContactForm />
       </div>
     );

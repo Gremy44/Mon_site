@@ -18,13 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from backend.views import ReasonView, FakeUserView, ContactView
 from rest_framework import routers
+import random
+from backend.models import GoodReasons
+
 
 router = routers.DefaultRouter()
 router.register(r'fake-users', FakeUserView, basename='fake-user')
 router.register(r'contact', ContactView, basename='contact')
+router.register(r'reason', ReasonView, basename='reasons')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('reason/<pk>/', ReasonView.as_view(), name='reasons'),
     path('api/', include(router.urls)),
     ]

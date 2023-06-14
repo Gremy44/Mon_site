@@ -9,51 +9,57 @@ interface User {
     age: number;
 }
 
+interface MyTableProps {
+    onPostSuccess: (newUser: User) => void;
+}
 
+const UserTable: React.FC<MyTableProps> = ({ onPostSuccess }) => {
+  // fill default value for users
+    const [users, setUsers] = useState<User[]>([
+        {
+            id: 500,
+            username: 'Anonymous',
+            password: 'Nope',
+            fake_username: 'FakeAnonymous',
+            age: 0,
+        },
+     ]);
 
-const UserTable: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get<User[]>('http://127.0.0.1:8000/api/fake-users/');
-      setUsers(response.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
+    useEffect(() => {
+        axios
+            .get<User[]>('http://127.0.0.1:8000/api/fake-users/')
+            .then((response) => {
+                console.log('Requête GET réussie :', response.data);
+                setUsers(response.data);
+            })
+            .catch((error) => {
+                console.error('Erreur lors de la requête GET :', error);
+            });
     }
-  };
+        , [onPostSuccess]);
 
-  const handlePostSuccess = (newUser: User) => {
-    setUsers([newUser, ...users]);
-  };
-
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Fake Username</th>
-            <th>Age</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.username}</td>
-              <td>{user.fake_username}</td>
-              <td>{user.age}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
+    return (
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Fake Username</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.map((user) => (
+                        <tr key={user.id}>
+                            <td>{user.username}</td>
+                            <td>{user.fake_username}</td>
+                            <td>{user.age}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+}
 
 export default UserTable;

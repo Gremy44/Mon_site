@@ -14,25 +14,26 @@ from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.core.mail import send_mail
 
-import os
 from dotenv import load_dotenv
-
 from datetime import timedelta
+import random
+import os
 
 
 from .serializer import FakeUserSerializer, GoodReasonsSerializer, ContactSerializer
 from .models import FakeUser, GoodReasons, Contact
 
-class ReasonView(RetrieveAPIView):
+class ReasonView(ModelViewSet):
     
     queryset = GoodReasons.objects.all()
     serializer_class = GoodReasonsSerializer
     permission_classes = [AllowAny]
     
-    '''def get_object(self,request, pk):
-        good_reason = get_object_or_404(GoodReasons, pk=pk)
-        serializer = GoodReasonsSerializer(good_reason)
-        return Response(serializer.data)'''
+    def get_queryset(self):
+        record_count = self.queryset.count()
+        random_id = random.randint(1, record_count)
+        record = get_object_or_404(GoodReasons, id=random_id)
+        return self.queryset.filter(id=record.id)
         
 class FakeUserView(ModelViewSet):
     

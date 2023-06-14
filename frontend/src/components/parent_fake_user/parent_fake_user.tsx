@@ -34,7 +34,7 @@ const ParentComponent: React.FC = () => {
     return (
         <div>
             <MyForm onPostSuccess={handlePostSuccess} />
-            <UserTable />
+            <UserTable onPostSuccess={handlePostSuccess} />
         </div>
     );
 };
