@@ -10,7 +10,7 @@ import ContactForm from "./components/contactform/contactform";
 import ParentComponent from "./components/parent_fake_user/parent_fake_user";
 import GiveReason from "./components/reasons/reasons";
 
-import './style/style.css'
+import './style/index.scss'
 
 function App() {
 

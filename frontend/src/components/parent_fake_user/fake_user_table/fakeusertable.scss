@@ -1,0 +1,23 @@
+div#table-fake-users{
+    // 5px border  
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        th, td {
+        text-align: left;
+        padding: 16px;
+        }
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+        tr:hover {
+        background-color: #ddd;
+        }
+    }
+}

@@ -39,7 +39,7 @@ const UserTable: React.FC<MyTableProps> = ({ onPostSuccess }) => {
         , [onPostSuccess]);
 
     return (
-        <div>
+        <div id="table-fake-users">
             <table>
                 <thead>
                     <tr>

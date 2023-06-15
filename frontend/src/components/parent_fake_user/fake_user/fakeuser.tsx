@@ -57,7 +57,7 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
   };
 
   return (
-    <div>
+    <div id="submit-fake-user">
       {!isButtonPressed && (
         <form onSubmit={handleSubmit}>
           <div>
@@ -74,7 +74,7 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
         </form>
       )}
       {isButtonPressed && submittedUsername && (
-        <p>Bienvenu {submittedUsername}</p>
+        <p id="new-user">Bienvenu <strong>{submittedUsername}</strong></p>
       )}
     </div>
   );

@@ -32,7 +32,7 @@ const ParentComponent: React.FC = () => {
     };
 
     return (
-        <div>
+        <div id='fake-users'>
             <MyForm onPostSuccess={handlePostSuccess} />
             <UserTable onPostSuccess={handlePostSuccess} />
         </div>
