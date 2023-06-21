@@ -61,7 +61,8 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
       {!isButtonPressed && (
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username">Username:</label>
+            <h3>Faisons connaissance</h3>
+            <label htmlFor="username">Entrez votre prénom :</label>
             <input
               type="text"
               id="username"
@@ -74,7 +75,7 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
         </form>
       )}
       {isButtonPressed && submittedUsername && (
-        <p id="new-user">Bienvenu <strong>{submittedUsername}</strong></p>
+        <p className="new-user">Bravo <strong className="new-user--name">- {submittedUsername} -</strong><br/>Bienvenu sur le <strong>'wall of fame'</strong></p>
       )}
     </div>
   );

@@ -30,9 +30,9 @@ class ReasonView(ModelViewSet):
     permission_classes = [AllowAny]
     
     def get_queryset(self):
-        record_count = self.queryset.count()
-        random_id = random.randint(1, record_count)
+        random_id = random.randint(11, 29)
         record = get_object_or_404(GoodReasons, id=random_id)
+        print("ID : ", random_id)
         return self.queryset.filter(id=record.id)
         
 class FakeUserView(ModelViewSet):

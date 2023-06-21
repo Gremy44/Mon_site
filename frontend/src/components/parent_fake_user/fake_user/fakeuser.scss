@@ -1,33 +1,21 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+
 div#submit-fake-user {
-    form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      div{
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-      }
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      input {
-        width: 300px;
-        height: 40px;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        &:focus {
-          outline: none;
-        }
-      }
-    }
+  form {
+    @include centerFlex;
+    height: auto;
+    width: 100vw;
+    margin: 0;
   }
 
-p#new-user{
-    text-align: center;
-    font-size: 1.2rem;
+  .new-user {
+    @include centerFlex;
+    padding: 2em 0 2em 0;
+    font-size: 3em;
+    .new-user--name{
+      font-family: 'roboto', sans-serif;
+    }
+  }
 }

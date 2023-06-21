@@ -1,28 +1,34 @@
 import React from "react";
 
-function AAppWeb() {
-    return (
-      <div id="a2">
-        <div id="tech">
-            <ul>
-                <li>Python</li>
-                <li>Django</li>
-            </ul>
+const AAppWeb: React.FC = () => {
+  const stack: string = " - Python - Django - Python - Django";
+  const argument: string = "";
+
+  return (
+    <div id="a2">
+      <div className="argument">
+      </div>
+      <div className="wrapper">
+        <div className="marqee">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
-        <div id="texte">
-            <p>Ici c'est Django, là-bas c'est une autre framework. On pas toujours les techno sur lesquelles on à appris mais quand on comprend le fonctionnement du framework on peut l'apréhender plus vite. Jusqu'ici j'ai appris Django mais les autres framework me tendent les bras.</p>
+        <div className="marqee2">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
-        <div id="ss">
-            <ul>
-                <li>Communicant</li>
-            </ul>
+        <div className="marqee3">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
-        <div id="sstexte">
-            <p>Ayant déjà plusieurs experiences professionnelles a mon actif, je connais l'importance de la communication au sein d'une équipe</p>
+        <div className="marqee4">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 
 export default AAppWeb; 

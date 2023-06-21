@@ -19,13 +19,11 @@ const GiveReason: React.FC = () => {
   };
 
   return (
-    <div>
-      <p>Si vous doutez encore, demandez vous même à l'api</p>
+    <div className="reasons">
+      <h3>Si vous doutez encore, demandez vous même à l'API</h3>
       {reasons.length > 0 ? (
-        reasons.map((reason, index) => (
-          <div key={index}>
-            <p>{reason.title}: {reason.reason}</p>
-          </div>
+        reasons.map((reason) => (
+          <p>{reason.title} : <strong>{reason.reason}</strong></p>
         ))
       ) : (
         <p>J'ai pleins d'arguments pour vous</p>

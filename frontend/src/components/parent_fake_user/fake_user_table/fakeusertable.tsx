@@ -58,6 +58,10 @@ const UserTable: React.FC<MyTableProps> = ({ onPostSuccess }) => {
                     ))}
                 </tbody>
             </table>
+            <div id="table-fake-users__desc">
+                <p>Voilà la liste des dernières personnes ayant rentré leurs prénoms ou pseudos, vous pouvez la retrouver à cette adresse : <br /> http://127.0.0.1:8000/api/fake-users/</p>
+                <p>Votre prénom est joli mais un pseudo généré aléatoirement par un programme en faisant une requête API c'est bien mieux pour se vendre. Alors bonjour à vous <strong>{users[0]?.fake_username}</strong> !</p>
+            </div>
         </div>
     );
 }

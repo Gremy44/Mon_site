@@ -1,0 +1,8 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+div#a5{
+    width: 100vw;
+    @include myBorder;
+    @include infiniteBanner;
+}

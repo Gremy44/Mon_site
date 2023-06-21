@@ -29,35 +29,43 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Nom :</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email :</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Message :</label>
-        <textarea
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-      </div>
-      <button type="submit">Envoyer</button>
-    </form>
+    <div id='contact-form'>
+      <form onSubmit={handleSubmit}>
+        <div className='contact-form--title'>
+          <h3>Envie de me contacter ?</h3>
+          <p>Je me tiens à votre disposition pour toutes discussions</p>
+        </div>
+        <div className="contact-form--input">
+          <div>
+            <label htmlFor="name">Nom :</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email :</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="message">Message :</label>
+            <textarea
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          </div>
+        </div>
+        <button id='submit' type="submit">Envoyer</button>
+      </form>
+    </div>
   );
 };
 

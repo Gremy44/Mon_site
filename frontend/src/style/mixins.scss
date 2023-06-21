@@ -1,0 +1,115 @@
+@mixin centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin arguments {
+  display: flex;
+  width: 110vw;
+  height: 50vh;
+  background-color: #fff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+@mixin mybutton {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #bebebe;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2em 0 2em 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #858585;
+    transition: 0.5s;
+  }
+  &:active {
+    background-color: #b7b7b7;
+    transition: 0.5s;
+  }
+}
+
+@mixin myBorder {
+  margin: 2em 0 2em 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@mixin infiniteBanner {
+  .argument {
+    height: 50vh;
+    width: 75vw;
+    display: flex;
+    padding: 10em 0 10em 0;
+    align-items: center;
+    text-align: justify;
+  }
+    .wrapper {
+      margin: 5em 0 5em 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 75vw;
+    }
+
+    .marqee {
+      flex-direction: row;
+      animation: Scroll $text-marqee-duration infinite linear;
+      white-space: nowrap;
+      span {
+        font-size: 3em;
+      }
+    }
+
+    .marqee2 {
+      animation: Scroll $text-marqee-duration infinite linear;
+      animation-delay: $text-marqee-duration-delay;
+      white-space: nowrap;
+      flex-direction: row;
+      span {
+        font-size: 3em;
+      }
+    }
+
+    .marqee3 {
+      animation: Scroll $text-marqee-duration infinite linear;
+      animation-delay: $text-marqee-duration-delay;
+      white-space: nowrap;
+      flex-direction: row;
+      span {
+        font-size: 3em;
+      }
+    }
+
+    .marqee4 {
+      animation: Scroll $text-marqee-duration infinite linear;
+      animation-delay: $text-marqee-duration-delay;
+      white-space: nowrap;
+      flex-direction: row;
+      span {
+        font-size: 3em;
+      }
+    }
+
+    @keyframes Scroll {
+      from {
+        transform: translateX(0%);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  
+}

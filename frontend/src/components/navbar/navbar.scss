@@ -1,0 +1,41 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+#nav{
+    background-color: $var1-main-bg-color;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        cursor: pointer;
+        li{
+            padding: 0 2vw;
+            color: #000;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            &:hover{
+                background-color: $var2-main-bg-color;
+                height: 80px;
+                width: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 1.3rem;
+                transition: $main-duration;
+            }
+        }
+    }
+}

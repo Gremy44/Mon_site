@@ -1,23 +1,41 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
 div#table-fake-users{
-    // 5px border  
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     table {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
         border-collapse: collapse;
         width: 100%;
         border: 1px solid #ddd;
-        th, td {
-        text-align: left;
+        th{
+            background: #bfbfbf;
+            padding: 15px 0 15px 0;
+        } 
+        td {
+        text-align: center;
         padding: 16px;
+        border-top: 6px dotted #000000;
         }
         tr:nth-child(even) {
         background-color: #f2f2f2;
         }
         tr:hover {
         background-color: #ddd;
+        }
+    }
+    div#table-fake-users__desc{
+        margin: 5em 5em 5em 5em;
+        font-family: 'Roboto', sans-serif;
+        text-justify: auto;
+        @include centerFlex;
+        p{
+            text-align: center;
         }
     }
 }

@@ -1,25 +1,32 @@
 import React from "react";
 
-function AVersionning() {
+const AVersionning: React.FC = () => {
+    const stack: string = " - Github - Stack Overflow - ChatGPT ";
+    const argument: string = "";
+
     return (
       <div id="a5">
-        <div id="tech">
-            <ul>
-                <li>Github</li>
-            </ul>
+      <div className="argument">
+      </div>
+      <div className="wrapper">
+        <div className="marqee">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
-        <div id="texte">
-            <p>Tous mes projets de formation ont étés versionnés avec github, je n'ai pas utilisé toutes les fonctionnalité car les projets étudiants personnelles ne permettent pas d'utiliser toutes les fonctions collaboratives mais les bases sont déjà là.</p>
+        <div className="marqee2">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
-        <div id="ss">
-            <ul>
-                <li>Rigueur</li>
-            </ul>
+        <div className="marqee3">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
-        <div id="sstexte">
-            <p>Un travail structuré permet de limiter les erreurs. Le suivi de projet grace aux solutions de versionning comme github.</p>
+        <div className="marqee4">
+          <span>{stack}</span>
+          <span>{stack}</span>
         </div>
       </div>
+    </div>
     );
   }
 

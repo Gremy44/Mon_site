@@ -2,20 +2,9 @@ import React from "react";
 
 function Header() {
   return (
-    <div>
-      <h1>Bienvenu</h1>
-      <div id="nav">
-        <ul>
-          <li>Bienvenue</li>
-          <li>HTML/CSS/React</li>
-          <li>App Web</li>
-          <li>Base de données</li>
-          <li>API REST</li>
-          <li>Versionning</li>
-          <li>Déploiement</li>
-          <li>Contact</li>
-        </ul>
-      </div>
+    <div id="welcom">
+      <p id="title">Bienvenu.</p>
+      <p id="desc">Wwywthm est un site de démonstration pour vous faire changer d'avis sur le recrutement d'un junior back end un peu touche à tout.</p>
     </div>
   );
 }

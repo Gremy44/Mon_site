@@ -1,0 +1,17 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+.reasons{
+    height: auto;
+    width: 100vw;
+    @include centerFlex;
+    @include myBorder;
+    p{
+        font-family: 'Roboto', sans-serif;
+        margin: 0 5em 0 5em;
+    }
+    h3{
+        margin: 1.5em 5em 1.5em 5em;
+        text-align: center;
+    }
+}

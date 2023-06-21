@@ -34,7 +34,7 @@ const ParentComponent: React.FC = () => {
     return (
         <div id='fake-users'>
             <MyForm onPostSuccess={handlePostSuccess} />
-            <UserTable onPostSuccess={handlePostSuccess} />
+            {users.length > 0 && <UserTable onPostSuccess={handlePostSuccess} />}
         </div>
     );
 };

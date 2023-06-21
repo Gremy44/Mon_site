@@ -1,29 +1,34 @@
 import React from "react";
 
-function ADb() {
+const ADb: React.FC = () => {
+    const stack: string = " PostgreSQL - PGAdmin - SQLite - Système administrateur de base de données Django";
+    const argument: string = "";
+
     return (
-      <div id="a3">
-        <div id="tech">
-            <ul>
-                <li>Bases de données relationnelle</li>
-                <li>PostgreSQL/SQLite</li>
-                <li>PGAdmin</li>
-            </ul>
+        <div id="a3">
+            <div className="argument">
+            </div>
+            <div className="wrapper">
+                <div className="marqee">
+                    <span>{stack}</span>
+                    <span>{stack}</span>
+                </div>
+                <div className="marqee2">
+                    <span>{stack}</span>
+                    <span>{stack}</span>
+                </div>
+                <div className="marqee3">
+                    <span>{stack}</span>
+                    <span>{stack}</span>
+                </div>
+                <div className="marqee4">
+                    <span>{stack}</span>
+                    <span>{stack}</span>
+                </div>
+            </div>
         </div>
-        <div id="texte">
-            <p>Mise en place de base donnée relationnelle, check utilisation d'outils d'administration de base de donnée, je n'utilise surement pas 100% de leurs capacité mais je sais m'en servir</p>
-        </div>
-        <div id="ss">
-            <ul>
-                <li>Organisation</li>
-            </ul>
-        </div>
-        <div id="sstexte">
-            <p>J'aime être organisé dans mon travail, ça éclairci la tête et ça fait gagné du temps</p>
-        </div>
-      </div>
     );
-  }
+}
 
 
 export default ADb; 

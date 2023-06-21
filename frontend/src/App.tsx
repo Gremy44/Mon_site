@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useState} from "react";
 import Header from "./components/header/header";
+import NavBar from "./components/navbar/navbar";
 import AFront from "./components/arguments_content/afront";
 import AAppWeb from "./components/arguments_content/aappweb";
 import ADb from "./components/arguments_content/adb";
@@ -17,6 +18,7 @@ function App() {
 
     return (
       <div>
+        <NavBar />
         <Header />
         <ParentComponent />
         <AFront />
