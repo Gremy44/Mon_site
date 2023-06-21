@@ -43,6 +43,11 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
       fake_username: '', // Remplacez la valeur appropriée pour fake_username
       age: 0, // Remplacez la valeur appropriée pour age
     };
+  
+    if (formData.username === '') {
+      newUser.username = 'Ms Smith';
+      setSubmittedUsername('Ms Smith');
+    }
 
     axios
       .post<User>('http://127.0.0.1:8000/api/fake-users/', newUser)
