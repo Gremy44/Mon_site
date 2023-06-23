@@ -1,77 +1,67 @@
-@import '../../style/variables.scss';
-@import '../../style/mixins.scss';
+@import '../../../../frontend/src/style/variables.scss';
 
-/*#nav{
-    background-color: $var1-main-bg-color;
-    height: 80px;
+nav{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    background-color: $var1-main-bg-color;
     position: fixed;
-    top: 0;
+    top: 0px;
     z-index: 100;
-    ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        cursor: pointer;
-        li{
-            padding: 0 2vw;
-            color: #000;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 500;
-            &:hover{
-                background-color: $var2-main-bg-color;
-                height: 80px;
-                width: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                font-size: 1.3rem;
-                transition: $main-duration;
-            }
-        }
-    }
-}*/
+    font-size: 1.3em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
     position: relative;
-  }
-  
-  nav ul li a {
+}
+
+nav a{
     display: block;
-    padding: 10px 20px;
     text-decoration: none;
-    color: #000;
-  }
-  
-  nav ul li:hover > .sous-menu {
-    display: block;
-  }
-  
-  nav .sous-menu {
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 3vh 0; /*hauteur de la barre de navigation*/
+}
+
+nav a:hover{
+    color: $main-p-font-color;
+    border-bottom: 2px solid $main-p-font-color;
+    background-color: RGBa(200,190,190,0.1);
+}
+
+.sous{
     display: none;
+    box-shadow: 0px 1px 2px $var3-main-bg-color;
+    background-color: white;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background: #f1f1f1;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    text-align: center;
     padding: 10px;
-  }
-  
-  nav .menu li {
-    display: block;
-  }
-  
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,190,190,0.1);
+}
+
+.conteneur{
+  margin: 50px 20px;
+  height: 1500px;
+}

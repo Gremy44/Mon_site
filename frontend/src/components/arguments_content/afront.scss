@@ -2,7 +2,19 @@
 @import '../../style/mixins.scss';
 
 div#a1{
-    width: 100vw;
+    width: 110%;
+    max-height: auto;
+
+    display: flex;
+
+    .argument{
+        flex:1;
+        overflow: hidden;
+        display: flex;
+        padding: 10em 0 10em 0;
+        align-items: center;
+        text-align: justify;
+    }
     @include myBorder;
     @include infiniteBanner;
 } 

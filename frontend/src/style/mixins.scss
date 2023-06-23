@@ -5,19 +5,10 @@
   flex-direction: column;
 }
 
-@mixin arguments {
-  display: flex;
-  width: 110vw;
-  height: 50vh;
-  background-color: #fff;
-  border: 1px solid #000000;
-  border-radius: 4px;
-  padding: 10px;
-}
 
 @mixin mybutton {
-  width: 200px;
-  height: 50px;
+  width: 250px;
+  height: 60px;
   border: none;
   border-radius: 5px;
   background-color: #bebebe;

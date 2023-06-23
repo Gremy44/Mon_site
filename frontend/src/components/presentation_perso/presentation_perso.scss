@@ -6,3 +6,10 @@ div#presentation-perso{
     height: auto;
     @include myBorder;
 }
+
+.pp{
+    width: 25vw;
+    height: auto;
+    border-radius: 50%;
+    @include myBorder;
+}

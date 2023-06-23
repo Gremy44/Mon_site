@@ -16,23 +16,23 @@ import GiveReason from "./components/reasons/reasons";
 import './style/index.scss'
 
 function App() {
-    return (
-      <div>
-        <NavBar />
-        <Header />
-        <PresSite />
-        <PresPerso />
-        <ParentComponent />
-        <AFront />
-        <AAppWeb />
-        <ADb />
-        <AApiRest />
-        <AVersionning />
-        <ADeploiement />
-        <GiveReason />
-        <ContactForm />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <NavBar />
+      <Header />
+      <PresSite />
+      <PresPerso />
+      <ParentComponent />
+      <AFront />
+      <AAppWeb />
+      <ADb />
+      <AApiRest />
+      <AVersionning />
+      <ADeploiement />
+      <GiveReason />
+      <ContactForm />
+    </div>
+  );
+}
 
 export default App;
