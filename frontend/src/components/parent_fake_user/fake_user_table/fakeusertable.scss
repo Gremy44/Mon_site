@@ -28,6 +28,9 @@ div#table-fake-users{
         tr:hover {
         background-color: #ddd;
         }
+        tr.zero{
+            background-color: #bcf5d3;
+        }
     }
     div#table-fake-users__desc{
         margin: 5em 5em 5em 5em;

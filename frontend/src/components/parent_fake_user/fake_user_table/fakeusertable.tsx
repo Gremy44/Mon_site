@@ -38,6 +38,22 @@ const UserTable: React.FC<MyTableProps> = ({ onPostSuccess }) => {
     }
         , [onPostSuccess]);
 
+    function convertNumberInString(number: number): undefined | string {
+        switch (number) {
+            case 0:
+                return 'zero';
+            case 1:
+                return 'un';
+            case 2:
+                return 'deux';
+            case 3:
+                return 'trois';
+            case 4:
+                return 'quatre';
+        }
+    }
+
+
     return (
         <div id="table-fake-users">
             <table>
@@ -49,8 +65,8 @@ const UserTable: React.FC<MyTableProps> = ({ onPostSuccess }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((user) => (
-                        <tr key={user.id}>
+                    {users.map((user, index) => (
+                        <tr className={convertNumberInString(index)} key={user.id}>
                             <td>{user.username}</td>
                             <td>{user.fake_username}</td>
                             <td>{user.age}</td>

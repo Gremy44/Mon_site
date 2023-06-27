@@ -22,10 +22,12 @@
   &:focus {
     outline: none;
   }
+
   &:hover {
     background-color: #858585;
     transition: 0.5s;
   }
+
   &:active {
     background-color: #b7b7b7;
     transition: 0.5s;
@@ -35,72 +37,149 @@
 @mixin myBorder {
   margin: 2em 0 2em 0;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  scroll-margin-top: 100px;
 }
 
 @mixin infiniteBanner {
-  .argument {
-    height: 50vh;
-    width: 75vw;
+
+  .wrapper {
+    margin: 5em 0 5em 0;
     display: flex;
-    padding: 10em 0 10em 0;
-    align-items: center;
-    text-align: justify;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 75vw;
   }
-    .wrapper {
-      margin: 5em 0 5em 0;
+
+  .marqee {
+    flex-direction: row;
+    animation: Scroll $text-marqee-duration infinite linear;
+    white-space: nowrap;
+
+    span {
+      font-size: 3em;
+    }
+  }
+
+  .marqee2 {
+    animation: Scroll $text-marqee-duration infinite linear;
+    animation-delay: $text-marqee-duration-delay;
+    white-space: nowrap;
+    flex-direction: row;
+
+    span {
+      font-size: 3em;
+    }
+  }
+
+  .marqee3 {
+    animation: Scroll $text-marqee-duration infinite linear;
+    animation-delay: $text-marqee-duration-delay;
+    white-space: nowrap;
+    flex-direction: row;
+
+    span {
+      font-size: 3em;
+    }
+  }
+
+  .marqee4 {
+    animation: Scroll $text-marqee-duration infinite linear;
+    animation-delay: $text-marqee-duration-delay;
+    white-space: nowrap;
+    flex-direction: row;
+
+    span {
+      font-size: 3em;
+    }
+  }
+
+  @keyframes Scroll {
+    from {
+      transform: translateX(0%);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+}
+
+@mixin badges {
+  .badges {
+    width: 100%;
+    padding: 13vh 0 5vh 0;
+
+    ul {
       display: flex;
       flex-direction: row;
+      width: 100%;
       justify-content: space-around;
-      max-width: 75vw;
-    }
 
-    .marqee {
-      flex-direction: row;
-      animation: Scroll $text-marqee-duration infinite linear;
-      white-space: nowrap;
-      span {
-        font-size: 3em;
+      .circle {
+
+        position: relative;
+
+        .card, .logo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          
+          transform: translate(-50%, -50%);
+          
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .card {
+
+          z-index: 2;
+
+          width: 7rem;
+          height: 9rem;
+
+          offset: 100px 0 0 0;
+
+          font-family: 'Sulphur Point', sans-serif;
+          font-weight: bolder;
+          font-size: 2rem;
+          color: $main-p-font-color;
+          text-align: center;
+
+          border-radius: 5%;
+          border: $var3-main-bg-color;
+          border-style: solid;
+          border-width: 0.15em;
+          background-color: #d1d0cf;
+
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          
+        }
+
+        .logo {
+          z-index: 1;
+
+          min-width: 7rem;
+          max-width: 7rem;
+          width: auto;
+
+          height: auto;
+          
+        }
+
+        &:hover {
+          .card {
+            z-index: 4;
+            transform: scale(1.1) translateX(-2em) translateY(-3em) rotate(-10deg);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: #b4cba8;
+          }
+
+          .logo {
+            z-index: 3;
+            transform: scale(1.1) translateX(2em) translateY(-5em) rotate(10deg);
+          }
+        }
       }
     }
-
-    .marqee2 {
-      animation: Scroll $text-marqee-duration infinite linear;
-      animation-delay: $text-marqee-duration-delay;
-      white-space: nowrap;
-      flex-direction: row;
-      span {
-        font-size: 3em;
-      }
-    }
-
-    .marqee3 {
-      animation: Scroll $text-marqee-duration infinite linear;
-      animation-delay: $text-marqee-duration-delay;
-      white-space: nowrap;
-      flex-direction: row;
-      span {
-        font-size: 3em;
-      }
-    }
-
-    .marqee4 {
-      animation: Scroll $text-marqee-duration infinite linear;
-      animation-delay: $text-marqee-duration-delay;
-      white-space: nowrap;
-      flex-direction: row;
-      span {
-        font-size: 3em;
-      }
-    }
-
-    @keyframes Scroll {
-      from {
-        transform: translateX(0%);
-      }
-
-      to {
-        transform: translateX(-100%);
-      }
-    }
-  
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import profilPicture from './../..//assets/images/pp.png';
+import profilPicture from './../..//static/images/pp.png';
 
 const PresPerso: React.FC = () => {
 
