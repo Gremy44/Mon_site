@@ -1,6 +1,9 @@
 import React from "react";
 
-const navBar: React.FC = () => {
+import { useEffect, useRef } from "react";
+import { fadeY} from "../../animations/myFadeAnimation"
+
+const NavBar: React.FC = () => {
 
     const bienvenu: string = "Bienvenue";
     const presentation: string = "Présentation";
@@ -16,8 +19,12 @@ const navBar: React.FC = () => {
     const a6: string = "Déploiement";
     const contact: string = "Contact";
 
+    useEffect(() => {
+        fadeY("#nav", 3, 1, 0, -100, 0, '0', 'none');
+      }, []);
+    
     return (
-        <nav>
+        <nav id="nav">
             <ul>
                 <li><a href="#welcom">{bienvenu}</a></li>
                 <li className="deroulant"><a href="#presentation-site">{presentation}</a>
@@ -43,4 +50,4 @@ const navBar: React.FC = () => {
     );
 }
 
-export default navBar;
+export default NavBar;

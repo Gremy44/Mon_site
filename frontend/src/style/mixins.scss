@@ -116,7 +116,7 @@
       width: 100%;
       justify-content: space-around;
 
-      .circle {
+      .a1-circle, .a2-circle, .a3-circle, .a4-circle, .a5-circle, .a6-circle {
 
         position: relative;
 
@@ -130,6 +130,11 @@
           transition: transform 0.3s ease-in-out;
         }
 
+        img.logo{
+          max-width: 3rem;
+          min-width: 6rem;
+        }
+
         .card {
 
           z-index: 2;
@@ -139,9 +144,9 @@
 
           offset: 100px 0 0 0;
 
-          font-family: 'Sulphur Point', sans-serif;
-          font-weight: bolder;
-          font-size: 2rem;
+          font-family: 'Ubuntu', sans-serif;
+          
+          font-size: 1.5rem;
           color: $main-p-font-color;
           text-align: center;
 

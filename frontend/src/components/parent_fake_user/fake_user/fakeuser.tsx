@@ -1,6 +1,9 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 
+import { useEffect, useRef } from "react";
+import { fadeX, simpleFade, popElement } from "../../../animations/myFadeAnimation"
+
 interface FormData {
   username: string;
 }
@@ -61,13 +64,19 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
       });
   };
 
+  useEffect(() => {
+    fadeX("#username", 0, 0.5, 0, -100, 0, '-400', 'none');
+    simpleFade(".fake-user-text", 0, 0.5, 0.4, '-400', 'none');
+    popElement("#btn-fake-user", 0, 0.5, 0, '-400');
+  }, []);
+
   return (
     <div id="submit-fake-user">
       {!isButtonPressed && (
         <form onSubmit={handleSubmit}>
           <div>
-            <h3>Faisons connaissance</h3>
-            <label htmlFor="username">Entrez votre prénom :</label>
+            <h3 className='fake-user-text'>Faisons connaissance</h3>
+            <label htmlFor="username" className='fake-user-text'>Entrez votre prénom :</label>
             <input
               type="text"
               id="username"
@@ -76,7 +85,7 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
               onChange={handleInputChange}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button id='btn-fake-user' type="submit">Submit</button>
         </form>
       )}
       {isButtonPressed && submittedUsername && (
