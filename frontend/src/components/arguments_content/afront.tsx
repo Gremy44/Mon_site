@@ -17,7 +17,7 @@ const AFront: React.FC = () => {
   useEffect(() => {
     simpleFade("#a1-title", 0, 0.5, 0.4, '0', 'none');
     fadeY("#a1-argument", 0.5, 0.5, 0, -100, 0, '0', 'none');
-    popElement(".a1-circle", 0.4, 0.5, 0.2, '-250');
+    popElement(".a1-circle", 0.4, 0.5, 0.2, '-500');
   }, []);
 
   return (
