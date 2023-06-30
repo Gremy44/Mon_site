@@ -12,7 +12,7 @@ const ADeploiement: React.FC = () => {
   useEffect(() => {
     simpleFade("#a6-title", 0.4, 0.5, 0.4, '0', 'none');
     fadeY("#a6-argument", 0.5, 0.5, 0, -100, 0, '0', 'none');
-    popElement(".a6-circle", 0.4, 0.5, 0.2, '-250');
+    popElement(".a6-circle", 0.4, 0.5, 0.2, '-500');
   }, []);
 
   return (

@@ -13,12 +13,12 @@ const AVersionning: React.FC = () => {
   useEffect(() => {
     simpleFade("#a5-title", 0.4, 0.5, 0.4, '0', 'none');
     fadeY("#a5-argument", 0.5, 0.5, 0, -100, 0, '0', 'none');
-    popElement(".a5-circle", 0.4, 0.5, 0.2, '-250');
+    popElement(".a5-circle", 0.4, 0.5, 0.2, '-500');
   }, []);
 
   return (
     <div id="a5">
-      <h3 id="a5-title">Versionning</h3>
+      <h3 id="a5-title">Versionning et divers</h3>
       <div className="argument" id="a5-argument">
         <p>{argument}</p>
         <p>{argument}</p>

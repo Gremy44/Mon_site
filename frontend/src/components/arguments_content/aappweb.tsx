@@ -13,7 +13,7 @@ const AAppWeb: React.FC = () => {
   useEffect(() => {
     simpleFade("#a2-title", 0.4, 0.5, 0.4, '0', 'none');
     fadeY("#a2-argument", 0.5, 0.5, 0, -100, 0, '0', 'none');
-    popElement(".a2-circle", 0.4, 0.5, 0.2, '-250');
+    popElement(".a2-circle", 0.4, 0.5, 0.2, '-500');
   }, []);
 
   return (

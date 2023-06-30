@@ -8,7 +8,10 @@ div#table-fake-users{
     align-items: center;
     flex-direction: column;
     table {
-        font-family: 'Roboto', sans-serif;
+        @include myBorder;
+        padding : 1vh 0 1vh 0;
+        font-family: 'ubuntu', sans-serif;
+        font-weight: 300;
         font-size: 2rem;
         border-collapse: collapse;
         width: 100%;
@@ -34,7 +37,6 @@ div#table-fake-users{
     }
     div#table-fake-users__desc{
         margin: 5em 5em 5em 5em;
-        font-family: 'Roboto', sans-serif;
         text-justify: auto;
         @include centerFlex;
         p{

@@ -14,7 +14,7 @@ const ADb: React.FC = () => {
     useEffect(() => {
         simpleFade("#a3-title", 0.4, 0.5, 0.4, '0', 'none');
         fadeY("#a3-argument", 0.5, 0.5, 0, -100, 0, '0', 'none');
-        popElement(".a3-circle", 0.4, 0.5, 0.2, '-250');
+        popElement(".a3-circle", 0.4, 0.5, 0.2, '-500');
     }, []);
 
     return (

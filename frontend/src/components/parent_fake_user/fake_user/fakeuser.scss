@@ -11,11 +11,19 @@ div#submit-fake-user {
   }
 
   .new-user {
+    @include myBorder;
     @include centerFlex;
-    padding: 2em 0 2em 0;
+    padding: 2em 4em 2em 4em;
     font-size: 3em;
-    .new-user--name{
-      font-family: 'roboto', sans-serif;
+  }
+
+  .ee_3{
+    position: absolute;
+    height: 35vh;
+    padding: 104px 0 0 716px;
+    &:hover{
+      opacity: 0.9;
+      cursor: pointer;
     }
   }
 }

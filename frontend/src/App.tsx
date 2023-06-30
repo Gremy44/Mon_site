@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Header from "./components/header/header";
 import NavBar from "./components/navbar/navbar";
@@ -13,10 +13,22 @@ import ADeploiement from "./components/arguments_content/adeploiement";
 import ContactForm from "./components/contactform/contactform";
 import ParentComponent from "./components/parent_fake_user/parent_fake_user";
 import GiveReason from "./components/reasons/reasons";
+import CV from "./components/cv/cv";
 
 import './style/index.scss'
 
-function App() {
+const App: React.FC = () => {
+  useEffect(() => {
+    const scrollToWelcome = () => {
+      const welcomeElement = document.getElementById('a1');
+      if (welcomeElement) {
+        welcomeElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    scrollToWelcome();
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -31,9 +43,11 @@ function App() {
       <AVersionning />
       <ADeploiement />
       <GiveReason />
+      <CV />
       <ContactForm />
     </div>
   );
 }
+
 
 export default App;

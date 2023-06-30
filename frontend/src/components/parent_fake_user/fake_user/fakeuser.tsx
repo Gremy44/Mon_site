@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { useEffect, useRef } from "react";
 import { fadeX, simpleFade, popElement } from "../../../animations/myFadeAnimation"
+import ee_3 from "../../../static/images/ee_3.png";
 
 interface FormData {
   username: string;
@@ -89,7 +90,10 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
         </form>
       )}
       {isButtonPressed && submittedUsername && (
-        <p className="new-user">Bravo <strong className="new-user--name">- {submittedUsername} -</strong><br/>Bienvenu sur le <strong>'wall of fame'</strong></p>
+        <div>
+          <p className="new-user">Bravo <strong className="new-user--name">- {submittedUsername} -</strong><br/>Bienvenu sur le <strong>'wall of fame'</strong></p>
+          <img src={ee_3} alt="ee_3" className="ee_3" />
+        </div>
       )}
     </div>
   );
