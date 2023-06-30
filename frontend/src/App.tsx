@@ -18,6 +18,9 @@ import CV from "./components/cv/cv";
 import './style/index.scss'
 
 const App: React.FC = () => {
+
+  const[imgValid, setImgValid] = React.useState([]);
+
   useEffect(() => {
     const scrollToWelcome = () => {
       const welcomeElement = document.getElementById('a1');
