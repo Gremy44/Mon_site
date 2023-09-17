@@ -4,7 +4,7 @@ from .models import FakeUser, GoodReasons
 
 class FakeUserAdmin(admin.ModelAdmin):
     
-    fields = ('username', 'password')
+    fields = ('username', 'fake_username', 'age')
 
 class GoodReasonsAdmin(admin.ModelAdmin):
 

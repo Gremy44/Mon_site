@@ -1,0 +1,17 @@
+<p>
+Ma formation ma permise d'apprendre les bases de données relationnelles, en me permettant d'utiliser des systèmes puissants et différents tel que SQLite ou PostgreSQL. Cette expérience a renforcé ma compréhension des fondamentaux de la gestion des données et a façonné ma capacité à créer des solutions de base de données robustes et performantes.
+</p>
+<hr />
+<p>
+J'ai appris à concevoir des schémas de base de données, à créer des tables et à établir des relations entre les entités, le tout dans un environnement léger et autonome. La rapidité et l'efficacité de SQLite en ont fait un choix idéal pour les applications locales et mobiles, où la gestion des données doit être rapide et fluide.
+</p>
+<hr />
+<p>
+Toutefois, ma formation ne s'est pas limitée à SQLite, et j'ai aussi vu PostgreSQL, un système de gestion de base de données relationnelle à part entière. PostgreSQL m'a ouvert les portes de la gestion de données à grande échelle. J'ai acquis une compréhension de la modélisation de données complexe et de la normalisation, assurant ainsi l'intégrité et la cohérence des données stockées.
+</p>
+<hr />
+<p>
+En matière de sécurité des bases de données, j'ai acquis des compétences précieuses pour protéger les données sensibles. J'ai appris à mettre en œuvre des mécanismes d'authentification et d'autorisation, à gérer les privilèges d'accès et à crypter les données pour garantir leur confidentialité.
+</p>
+<hr />
+<p>Ce parcours ma permis d'apprendre à façonner ma capacité à concevoir, à mettre en œuvre et à maintenir des systèmes de gestion de données de qualité. </p>

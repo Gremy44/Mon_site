@@ -6,7 +6,6 @@ class FakeUserSerializer(serializers.ModelSerializer):
         model = FakeUser
         fields = [
             'username',
-            'password',
             'fake_username',
             'age',
         ]

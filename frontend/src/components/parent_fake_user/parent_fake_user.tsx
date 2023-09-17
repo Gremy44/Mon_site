@@ -7,7 +7,6 @@ import UserTable from './fake_user_table/fakeusertable';
 interface User {
     id: number;
     username: string;
-    password: string;
     fake_username: string;
     age: number;
 }

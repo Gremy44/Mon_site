@@ -9,7 +9,6 @@ import AAppWeb from "./components/arguments_content/aappweb";
 import ADb from "./components/arguments_content/adb";
 import AApiRest from "./components/arguments_content/aapirest";
 import AVersionning from "./components/arguments_content/aversionning";
-import ADeploiement from "./components/arguments_content/adeploiement";
 import ContactForm from "./components/contactform/contactform";
 import ParentComponent from "./components/parent_fake_user/parent_fake_user";
 import GiveReason from "./components/reasons/reasons";
@@ -44,7 +43,6 @@ const App: React.FC = () => {
       <ADb />
       <AApiRest />
       <AVersionning />
-      <ADeploiement />
       <GiveReason />
       <CV />
       <ContactForm />

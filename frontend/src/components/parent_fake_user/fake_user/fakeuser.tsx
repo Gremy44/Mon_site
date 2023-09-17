@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+// import dotenv from 'dotenv';
 
 import { useEffect, useRef } from "react";
 import { fadeX, simpleFade, popElement } from "../../../animations/myFadeAnimation"
@@ -9,10 +10,10 @@ interface FormData {
   username: string;
 }
 
+// dotenv.config();
 interface User {
   id: number;
   username: string;
-  password: string;
   fake_username: string;
   age: number;
 }
@@ -20,6 +21,14 @@ interface User {
 interface MyFormProps {
   onPostSuccess: (newUser: User) => void;
 }
+
+const axiosInstance = axios.create({
+  baseURL: 'http://127.0.0.1:8000/api/',
+  headers: {
+    'Authorization': 'COUCOU LA', // Ma clef API
+    'Content-Type': 'application/json',
+  },
+});
 
 const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
   const [formData, setFormData] = useState<FormData>({
@@ -43,7 +52,6 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
     const newUser: User = {
       id: 0, // Remplacez la valeur appropriée pour id
       username: formData.username,
-      password: '', // Remplacez la valeur appropriée pour password
       fake_username: '', // Remplacez la valeur appropriée pour fake_username
       age: 0, // Remplacez la valeur appropriée pour age
     };
@@ -53,8 +61,8 @@ const MyForm: React.FC<MyFormProps> = ({ onPostSuccess }) => {
       setSubmittedUsername('Ms Smith');
     }
 
-    axios
-      .post<User>('http://127.0.0.1:8000/api/fake-users/', newUser)
+    axiosInstance
+      .post<User>('fake-users/', newUser)
       .then((response) => {
         console.log('Requête POST réussie :', response.data);
         setFormData({ username: '' });

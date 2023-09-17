@@ -4,7 +4,6 @@ import axios from 'axios';
 interface User {
     id: number;
     username: string;
-    password: string;
     fake_username: string;
     age: number;
 }
@@ -19,7 +18,6 @@ const UserTable: React.FC<MyTableProps> = ({ onPostSuccess }) => {
         {
             id: 500,
             username: 'Anonymous',
-            password: 'Nope',
             fake_username: 'FakeAnonymous',
             age: 0,
         },

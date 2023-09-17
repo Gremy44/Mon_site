@@ -34,6 +34,7 @@ const PresPerso: React.FC = () => {
                 <br />J'ai toujours été intrigué par la programmation, mais ma curiosité a souvent été coupée par l'exigence technique de ce domaine.
                 <br />C'est donc en 2022 que je décide de suivre une formation d'un an en ligne chez Open Classrooms pour me former au développement d'application web avec Python (langage qui est très utilisé dans les logiciels d'infographie 3D).
                 <br />Mon grand calme, ma curiosité et mon acharnement, ont été mes plus grandes qualités pour ne pas m'arracher les cheveux devant les innombrables bugs affrontés durant cette formation.
+                <br />Ma vision des choses : Les stacks de développement son tellements variées qu'il est difficile de correspondre à 100% à l'offre d'emplois dans ses specifications techniques pur. Ici je veux montrer que même si la stack est différente de ce que j'ai étudié, j'ai des connaissance et des mecanismes de base que je peux adapter à des technologes différentes que je n'ai pas encore eu le temps de parcourir. Mon adaptabilité est donc mon meilleur atout. 
             </text>
         </div>
     );

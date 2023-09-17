@@ -3,21 +3,25 @@ from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 
+from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.core.mail import send_mail
 
 from dotenv import load_dotenv
 from datetime import timedelta
+import requests
 import random
 import os
+
+import json
 
 
 from .serializer import FakeUserSerializer, GoodReasonsSerializer, ContactSerializer
@@ -41,27 +45,36 @@ class FakeUserView(ModelViewSet):
     serializer_class = FakeUserSerializer
     permission_classes = [AllowAny]
     
+    def get_fake_user_view(self):
+        r_fake_username = requests.get('https://api.namefake.com/name')
+        data_user = json.loads(r_fake_username.text)
+        fake_username = data_user['name']
+        print('FU :', fake_username)
+        return fake_username
+        
     def get_queryset(self):
         queryset = super().get_queryset()
         limit = 5  # Limite le nombre d'éléments à 5
         return queryset[:limit]
-    
-    def create(self, request, *args, **kwargs):
-        # Récupérer le nom d'utilisateur fourni dans la requête POST
-        username = request.data.get('username')
-        print('COUCOU : ', username)
-        
-        # Créer un cookie de session avec le nom d'utilisateur comme valeur
-        session_key = request.session.session_key
-        if not session_key:
-            request.session.save()
-            session_key = request.session.session_key
 
-        Session.objects.filter(session_key=session_key).update(expire_date=timezone.now() + timedelta(hours=1))
-        request.session['temporary_username'] = username
+    def create(self, request):
         
-        # Appeler la méthode create() de la classe parente pour gérer la création de l'objet FakeUser
-        return super().create(request, *args, **kwargs)
+        username = request.data.get('username')
+        
+        if username:
+            r_fake_username = requests.get('https://api.namefake.com/name')
+            data_user = json.loads(r_fake_username.text)
+            fake_username = data_user['name']
+            age = random.randint(18, 99)
+
+            fake_user = FakeUser(username=username, fake_username=fake_username, age=age)
+            fake_user.save()
+
+            serializer = self.get_serializer(fake_user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response({"username": ["Le champ 'username' est requis."]}, status=status.HTTP_400_BAD_REQUEST)
+    
 
     
 class ContactView(ModelViewSet):

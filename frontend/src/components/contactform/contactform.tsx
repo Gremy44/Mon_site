@@ -10,9 +10,9 @@ const ContactForm: React.FC = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fadeX(".contact-input", 0, 0.5, .2, -100, 0, '-100', 'none');
+    fadeX(".contact-input", 0, 0.5, .2, -100, 0, '-300', 'none');
     simpleFade(".contact-text", 0.4, 0.5, 0.4, '0', 'none');
-    popElement(".contact-btn", 2, 0.5, 0.2, '-600vh');
+    popElement(".contact-btn", 2, 0.5, 0.2, '-650vh');
   }, []);
 
   const handleSubmit = async (e: FormEvent) => {

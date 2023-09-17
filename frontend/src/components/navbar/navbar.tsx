@@ -16,7 +16,6 @@ const NavBar: React.FC = () => {
     const a3: string = "Base de données";
     const a4: string = "API REST";
     const a5: string = "Versionning";
-    const a6: string = "Déploiement";
     const contact: string = "Contact";
 
     useEffect(() => {
@@ -41,7 +40,6 @@ const NavBar: React.FC = () => {
                         <li><a href="#a3">{a3}</a></li>
                         <li><a href="#a4">{a4}</a></li>
                         <li><a href="#a5">{a5}</a></li>
-                        <li><a href="#a6">{a6}</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact-form">{contact}</a></li>
