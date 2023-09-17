@@ -12,7 +12,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # Stage 2: Build the backend Django app
-FROM python:3.9 as build-step-backend
+FROM python:3.9 as build-step-backend 
 
 WORKDIR /app/backend
 
