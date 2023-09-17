@@ -1,18 +1,2 @@
-name: Mon_site
-buildpacks:
-  - python/cpython
-  - nodejs
-
-env:
-  PYTHON_RUNTIME_VERSION: 3.10
-
-scripts:
-  # Commandes à exécuter avant le déploiement
-  - python manage.py collectstatic --noinput
-  - python manage.py migrate
-  - npm install --prefix frontend
-  - npm run build --prefix frontend
-
-formation:
-  web:
-    command: gunicorn wwywthm.wsgi --log-file -
+run:
+  web: gunicorn nom-de-votre-projet.wsgi  # Assurez-vous de spécifier le bon nom du fichier WSGI de votre projet Django
