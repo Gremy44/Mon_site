@@ -1,2 +1,4 @@
+app: wwywthm
+
 run:
-  web: gunicorn nom-de-votre-projet.wsgi  # Assurez-vous de spécifier le bon nom du fichier WSGI de votre projet Django
+  web: gunicorn oc_lettings_site.wsgi
