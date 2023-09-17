@@ -1,4 +1,8 @@
-app: wwywthm
+build:
+  scripts:
+    - cd frontend && npm install && npm run build
+  config:
+    npm_config_production: true
 
 run:
-  web: gunicorn oc_lettings_site.wsgi
+  web: gunicorn wwywthm.wsgi
