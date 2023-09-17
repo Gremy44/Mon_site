@@ -1,0 +1,29 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+
+div#submit-fake-user {
+  form {
+    @include centerFlex;
+    height: auto;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .new-user {
+    @include myBorder;
+    @include centerFlex;
+    padding: 2em 4em 2em 4em;
+    font-size: 3em;
+  }
+
+  .ee_3{
+    position: absolute;
+    height: 35vh;
+    padding: 104px 0 0 716px;
+    &:hover{
+      opacity: 0.9;
+      cursor: pointer;
+    }
+  }
+}

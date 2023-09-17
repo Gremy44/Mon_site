@@ -1,12 +1,11 @@
 from rest_framework import serializers
-from .models import FakeUser, GoodReasons
+from .models import FakeUser, GoodReasons, Contact
 
 class FakeUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = FakeUser
         fields = [
             'username',
-            'password',
             'fake_username',
             'age',
         ]
@@ -18,3 +17,8 @@ class GoodReasonsSerializer(serializers.ModelSerializer):
             'title',
             'reason',
         ]
+        
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ['id', 'name', 'email', 'message']

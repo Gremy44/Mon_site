@@ -1,0 +1,67 @@
+@import '../../../../frontend/src/style/variables.scss';
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: $var1-main-bg-color;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    font-size: 1.3em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 3vh 0; /*hauteur de la barre de navigation*/
+}
+
+nav a:hover{
+    color: $main-p-font-color;
+    border-bottom: 2px solid $main-p-font-color;
+    background-color: RGBa(200,190,190,0.1);
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px $var3-main-bg-color;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    text-align: center;
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,190,190,0.1);
+}
+
+.conteneur{
+  margin: 50px 20px;
+  height: 1500px;
+}

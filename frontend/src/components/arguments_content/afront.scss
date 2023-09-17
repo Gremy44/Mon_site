@@ -1,0 +1,24 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+div#a1{
+    width: 100%;
+    max-height: auto;
+
+    display: flex;
+
+    @include myBorder;
+    @include infiniteBanner;
+
+    .argument{
+        flex:1;
+        width: auto;
+        max-width: 60%;
+        display: flex;
+        padding: 0 10vw 0 10vw;
+        align-items: left;
+        text-align: left;
+    
+         @include badges;
+    }
+} 
