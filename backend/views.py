@@ -27,6 +27,10 @@ import json
 from .serializer import FakeUserSerializer, GoodReasonsSerializer, ContactSerializer
 from .models import FakeUser, GoodReasons, Contact
 
+def index(request):
+    return render(request, 'build/index.html')
+
+
 class ReasonView(ModelViewSet):
     
     queryset = GoodReasons.objects.all()
@@ -38,7 +42,8 @@ class ReasonView(ModelViewSet):
         record = get_object_or_404(GoodReasons, id=random_id)
         print("ID : ", random_id)
         return self.queryset.filter(id=record.id)
-        
+
+    
 class FakeUserView(ModelViewSet):
     
     queryset = FakeUser.objects.all().order_by('-id')
@@ -75,8 +80,7 @@ class FakeUserView(ModelViewSet):
         else:
             return Response({"username": ["Le champ 'username' est requis."]}, status=status.HTTP_400_BAD_REQUEST)
     
-
-    
+  
 class ContactView(ModelViewSet):
     
     queryset = Contact.objects.all()

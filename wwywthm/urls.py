@@ -16,11 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from backend.views import ReasonView, FakeUserView, ContactView
+from backend.views import ReasonView, FakeUserView, ContactView, index
 from rest_framework import routers
-import random
-from backend.models import GoodReasons
-
 
 router = routers.DefaultRouter()
 router.register(r'fake-users', FakeUserView, basename='fake-user')
@@ -28,6 +25,7 @@ router.register(r'contact', ContactView, basename='contact')
 router.register(r'reason', ReasonView, basename='reasons')
 
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     ]
